@@ -40,5 +40,6 @@ body {
 
 #score {
     z-index: 1;
-    position: absolute;
+    position: relative;
+    top: 25px;
 }
