@@ -1,9 +1,11 @@
 window.onload = function () {
     let gameArea = document.getElementById('gameArea')
+    let scoreboard = document.getElementById('score')
     let ctx = gameArea.getContext('2d')
     document.addEventListener('keydown', keyPush)
 
     const speed = 10
+    let score = 0
     speedX = speedY = 0
     let playerX = 400
     let playerY = 200
@@ -43,8 +45,11 @@ window.onload = function () {
         if ((playerX - appleX) <= 10 && (playerX - appleX) >= -10 && (playerY - appleY) <= 10 && (playerY - appleY) >= -10) {
             appleX = Math.floor(Math.random() * 780) + 10
             appleY = Math.floor(Math.random() * 580) + 10
+            score++
             tail++
         }
+
+        scoreboard.innerText = `Score: ${score}`
     }
 
     setInterval(inGame, 1000 / 15)

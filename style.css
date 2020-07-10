@@ -16,7 +16,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 40vw;
-    height: 60vh;
+    height: 100vh;
 }
 
 .title {
@@ -36,4 +36,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#score {
+    z-index: 1;
+    position: absolute;
 }
