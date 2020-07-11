@@ -31,7 +31,7 @@ window.onload = function () {
         for (i in trail) {
             ctx.fillRect(trail[i].x, trail[i].y, 10, 10)
 
-            if (trail[i].x == playerX && trail[i].y == playerY) {
+            if (trail[i].x == playerX && trail[i].y == playerY && (speedX != 0 || speedY != 0)) {
                 gameOver()
             }
         }
@@ -58,23 +58,23 @@ window.onload = function () {
         switch (event.keyCode) {
             case 37:
             case 65:
-                speedX = -speed
+                speedX == speed ? speedX = speedX : speedX = -speed
                 speedY = 0
                 break
             case 38:
             case 87:
                 speedX = 0
-                speedY = -speed
+                speedY == speed ? speedY = speedY : speedY = -speed
                 break
             case 39:
             case 68:
-                speedX = speed
+                speedX == -speed ? speedX = speedX : speedX = speed
                 speedY = 0
                 break
             case 40:
             case 83:
                 speedX = 0
-                speedY = speed
+                speedY == -speed ? speedY = speedY : speedY = speed
                 break
             default:
                 break
@@ -82,7 +82,7 @@ window.onload = function () {
     }
 
     function gameOver() {
-        speedX = speedY = 0
-        tail = 5
+       window.location.replace('./game_over.html')
+       sessionStorage.setItem('gameScore', `${score}`)
     }
 }
