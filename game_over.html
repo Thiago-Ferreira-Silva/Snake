@@ -14,8 +14,13 @@
         <a href="./index.html" class="btn">Menu</a>
     </div>
     <script>
-        const score = parseInt(sessionStorage.getItem('gameScore'))
-        sessionStorage.removeItem('gameScore')
+        const score = sessionStorage.getItem('__score')
+
+        /*
+        const scores = JSON.parse(localStorage.getItem('__snake_gameScore'))
+        scores.unshift(score)
+        localStorage.setItem('__snake_gameScore', JSON.stringfy(scores))
+        */
 
         document.getElementById('showScore').innerText = `Your score was ${score}`
     </script>

@@ -82,7 +82,9 @@ window.onload = function () {
     }
 
     function gameOver() {
-       window.location.replace('./game_over.html')
-       sessionStorage.setItem('gameScore', `${score}`)
+        
+        sessionStorage.setItem('__score', `${score}`)
+
+        window.location.replace('./game_over.html')
     }
 }
