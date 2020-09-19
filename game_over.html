@@ -11,16 +11,13 @@
 <body>
     <div class="container">
         <div id="showScore"></div>
+        <input type="text" id="name" placeholder="Enter your name">
+        <button class="btn" onclick="setScore()">Save score</button>
         <a href="./index.html" class="btn">Menu</a>
     </div>
+    <script src="./scores.js"></script>
     <script>
         const score = sessionStorage.getItem('__score')
-
-        /*
-        const scores = JSON.parse(localStorage.getItem('__snake_gameScore'))
-        scores.unshift(score)
-        localStorage.setItem('__snake_gameScore', JSON.stringfy(scores))
-        */
 
         document.getElementById('showScore').innerText = `Your score was ${score}`
     </script>
